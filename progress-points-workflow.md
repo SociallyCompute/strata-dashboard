@@ -8,34 +8,36 @@
   <tr>
     <td style="border: 1px solid #ccc; padding: 6px;">U1.C1</td>
     <td style="border: 1px solid #ccc; padding: 6px;">
-      <pre><code>has_event = coll.count_documents({
-    "version": "Version [3.59] - 11/14/2025",
-    "playerId": pid,
-    "eventKey": "DialogueNodeEvent:31:29"
-}) &gt; 0</code></pre>
+    <pre><code>for pid in allPlayers:
+      has_event = coll.count_documents({
+      "version": "Version [3.59] - 11/14/2025",
+      "playerId": pid,
+      "eventKey": "DialogueNodeEvent:31:29"
+      }) > 0
+    if has_event:
+       color = 1 # ("green")
+    else:
+       color = 0 # ("white")
     </td>
     <td style="border: 1px solid #ccc; padding: 6px;">
-      <pre><code>if has_event:
-    color = 1 ("green")
-else:
-    color = 0 ("white")</code></pre>
     </td>
   </tr>
 
   <tr>
     <td style="border: 1px solid #ccc; padding: 6px;">U1.C2</td>
     <td style="border: 1px solid #ccc; padding: 6px;">
-      <pre><code>has_event = coll.count_documents({
-    "version": "Version [3.59] - 11/14/2025",
-    "playerId": pid,
-    "eventKey": "DialogueNodeEvent:30:98"
-}) &gt; 0</code></pre>
+      <pre><code>For pid in allPlayers:
+      has_event = coll.count_documents({
+      "version": "Version [3.59] - 11/14/2025",
+       "playerId": pid,
+       "eventKey": "DialogueNodeEvent:30:98"
+    }) > 0
+    if has_event:
+        color = 1 # ("green")
+    else:
+        color = 0 # ("white")
     </td>
     <td style="border: 1px solid #ccc; padding: 6px;">
-      <pre><code>if has_event:
-    color = 1 ("green")
-else:
-    color = 0 ("white")</code></pre>
     </td>
   </tr>
 
@@ -77,17 +79,19 @@ else:
   <tr>
     <td style="border: 1px solid #ccc; padding: 6px;">U1.C4</td>
     <td style="border: 1px solid #ccc; padding: 6px;">
-      <pre><code>has_event = coll.count_documents({
+      <pre><code>For pid in allPlayers:
+    has_event = coll.count_documents({
     "version": "Version [3.59] - 11/14/2025",
     "playerId": pid,
     "eventKey": "QuestFinishEvent:34"
-}) &gt; 0</code></pre>
+   }) > 0
+   if has_event:
+      color = 1 # ("green")
+   else:
+      color = 0 # ("white")
+</code></pre>
     </td>
     <td style="border: 1px solid #ccc; padding: 6px;">
-      <pre><code>if has_event:
-    color = 1 ("green")
-else:
-    color = 0 ("white")</code></pre>
     </td>
   </tr>
 
@@ -104,7 +108,7 @@ else:
     if has_event:
         finishQueue.append(pid)
     else:
-        color = 0 #("white")</code></pre>
+        color = 0 # ("white")</code></pre>
     </td>
     <td style="border: 1px solid #ccc; padding: 6px;">
       <pre><code>yellow_nodes = ["DialogueNodeEvent:68:23", "DialogueNodeEvent:68:27", "DialogueNodeEvent:68:28", "DialogueNodeEvent:68:31"]
@@ -121,9 +125,9 @@ for pid in finishQueue:
         "eventKey": {"$in": yellow_nodes}
     }) is not None
     if has_29 and not has_any_yellow:
-        color = 1 #("green")
+        color = 1 # ("green")
     else:
-        color = 2 #("yellow")</code></pre>
+        color = 2 # ("yellow")</code></pre>
     </td>
   </tr>
 
@@ -140,7 +144,7 @@ For pid in allPlayers:
     if has_event:
         finishQueue.append(pid)
     else:
-        color = 0 #("white")</code></pre>
+        color = 0 # ("white")</code></pre>
     </td>
     <td style="border: 1px solid #ccc; padding: 6px;">
       <pre><code>START_KEY = "DialogueNodeEvent:20:1"
@@ -184,9 +188,9 @@ for pid in finishQueue:
         }
     })
     if count_targets &lt;= 1:
-        color = 1 #("green")
+        color = 1 # ("green")
     else:
-        color = 2 #("yellow")</code></pre>
+        color = 2 # ("yellow")</code></pre>
     </td>
   </tr>
 
@@ -203,7 +207,7 @@ For pid in allPlayers:
     if has_event:
         finishQueue.append(pid)
     else:
-        color = 0 #("white")</code></pre>
+        color = 0 # ("white")</code></pre>
     </td>
     <td style="border: 1px solid #ccc; padding: 6px;">
       <pre><code>START_KEY = "DialogueNodeEvent:20:33"
@@ -254,9 +258,9 @@ for pid in finishQueue:
         }
     })
     if count_targets &lt;= 6:
-        color = 1 #("green")
+        color = 1 # ("green")
     else:
-        color = 2 #("yellow")</code></pre>
+        color = 2 # ("yellow")</code></pre>
     </td>
   </tr>
 
@@ -273,7 +277,7 @@ For pid in allPlayers:
     if has_event:
         finishQueue.append(pid)
     else:
-        color = 0 #("white")</code></pre>
+        color = 0 # ("white")</code></pre>
     </td>
     <td style="border: 1px solid #ccc; padding: 6px;">
       <pre><code>success_key = "DialogueNodeEvent:74:21"
@@ -299,9 +303,9 @@ For pid in finishQueue:
         }
     ) is not None
     if has_74_21 and not has_bad_feedback:
-        color = 1 #("green")
+        color = 1 # ("green")
     else:
-        color = 2 #("yellow")</code></pre>
+        color = 2 # ("yellow")</code></pre>
     </td>
   </tr>
 
@@ -318,7 +322,7 @@ For pid in allPlayers:
     if has_event:
          finishQueue.append(pid)
     else:
-        color = 0 #("white")</code></pre>
+        color = 0 # ("white")</code></pre>
     </td>
     <td style="border: 1px solid #ccc; padding: 6px;">
       <pre><code>POS_KEYS = [
@@ -358,9 +362,9 @@ For pid in finishQueue:
     })
     score = pos_count - (neg_count / 3.0)
     if score &gt;= 4:
-        color = 1 #("green")
+        color = 1 # ("green")
     else:
-        color = 2 #("yellow")</code></pre>
+        color = 2 # ("yellow")</code></pre>
     </td>
   </tr>
 
@@ -377,7 +381,7 @@ For pid in allPlayers:
     if has_event:
         finishQueue.append(pid)
     else:
-        color = 0 #("white")</code></pre>
+        color = 0 # ("white")</code></pre>
     </td>
     <td style="border: 1px solid #ccc; padding: 6px;">
       <pre><code>For pid in finishQueue:
@@ -389,7 +393,7 @@ For pid in allPlayers:
         }
     )
     if not pass_node:
-        color = 2 ("yellow")
+        color = 2 # ("yellow")
         continue
     yellow_44_45 = coll.find_one(
         {
@@ -399,9 +403,9 @@ For pid in allPlayers:
         }
     )
     if yellow_44_45:
-        color = 2 ("yellow")
+        color = 2 # ("yellow")
     else:
-        color = 1 ("green")</code></pre>
+        color = 1 # ("green")</code></pre>
     </td>
   </tr>
 
@@ -418,7 +422,7 @@ For pid in allPlayers:
     if has_event:
         finishQueue.append(pid)
     else:
-        color = 0 ("white")</code></pre>
+        color = 0 # ("white")</code></pre>
     </td>
     <td style="border: 1px solid #ccc; padding: 6px;">
       <pre><code>SUCCESS_KEY = "DialogueNodeEvent:27:7"
@@ -445,9 +449,9 @@ For pid in finishQueue:
         }
     )
     if has_success and neg_count &lt;= 3:
-        color = 1 ("green")
+        color = 1 # ("green")
     else:
-        color = 2 ("yellow")</code></pre>
+        color = 2 # ("yellow")</code></pre>
     </td>
   </tr>
 </table>
