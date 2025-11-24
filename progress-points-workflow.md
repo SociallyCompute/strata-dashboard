@@ -1,4 +1,5 @@
-<table style="border-collapse: collapse; width: 100%;">
+<div style="width: 100%; display: block;">
+<table style="border-collapse: collapse; width: 100%; table-layout: fixed;">
   <tr>
     <th style="border: 1px solid #ccc; padding: 6px;">Progress Point Key</th>
     <th style="border: 1px solid #ccc; padding: 6px;">Progress End Event (Phase 1)</th>
@@ -455,3 +456,4 @@ For pid in finishQueue:
     </td>
   </tr>
 </table>
+</div>
