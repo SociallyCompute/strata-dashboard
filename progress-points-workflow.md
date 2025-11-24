@@ -42,23 +42,21 @@ else:
   <tr>
     <td style="border: 1px solid #ccc; padding: 6px;">U1.C3</td>
     <td style="border: 1px solid #ccc; padding: 6px;">
-      <pre><code>finishQueue = []
-
-For pid in allPlayers:
-
-    has_event = coll.count_documents({
+    <pre><code>finishQueue = []
+for pid in allPlayers:
+  has_event = coll.count_documents({
         "version": "Version [3.59] - 11/14/2025",
         "playerId": pid,
         "eventKey": "QuestActiveEvent:34"
     }) &gt; 0
-
-    if has_event:
-        finishQueue.append(pid)
-    else:
-        color = 0 #("white")</code></pre>
-    </td>
-    <td style="border: 1px solid #ccc; padding: 6px;">
-      <pre><code>For pid in finishQueue:
+  if has_event:
+      finishQueue.append(pid)
+  else:
+      color = 0  # ("white")
+</code></pre>
+  </td>
+  <td style="border: 1px solid #ccc; padding: 6px;">
+    <pre><code>for pid in finishQueue:
 
     has_yellow_trigger = coll.count_documents({
         "version": "Version [3.59] - 11/14/2025",
@@ -70,11 +68,12 @@ For pid in allPlayers:
     }) &gt; 0
 
     if has_yellow_trigger:
-        color = 2 #("yellow")
+        color = 2  # ("yellow")
     else:
-        color = 1 #("green")</code></pre>
-    </td>
-  </tr>
+        color = 1  # ("green")
+</code></pre>
+  </td>
+</tr>
 
   <tr>
     <td style="border: 1px solid #ccc; padding: 6px;">U1.C4</td>
