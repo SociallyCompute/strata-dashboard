@@ -42,17 +42,18 @@ else:
   <tr>
     <td style="border: 1px solid #ccc; padding: 6px;">U1.C3</td>
     <td style="border: 1px solid #ccc; padding: 6px;">
-    <pre><code>finishQueue = []
-for pid in allPlayers:
-  has_event = coll.count_documents({
-        "version": "Version [3.59] - 11/14/2025",
-        "playerId": pid,
-        "eventKey": "QuestActiveEvent:34"
-    }) &gt; 0
-  if has_event:
-      finishQueue.append(pid)
-  else:
-      color = 0  # ("white")
+  <pre><code>
+  finishQueue = []
+  for pid in allPlayers:
+          has_event = coll.count_documents({
+          "version": "Version [3.59] - 11/14/2025",
+          "playerId": pid,
+          "eventKey": "QuestActiveEvent:34"
+          }) &gt; 0
+     if has_event:
+        finishQueue.append(pid)
+     else:
+        color = 0  # ("white")
 </code></pre>
   </td>
   <td style="border: 1px solid #ccc; padding: 6px;">
@@ -96,15 +97,12 @@ else:
     <td style="border: 1px solid #ccc; padding: 6px;">U2.C1</td>
     <td style="border: 1px solid #ccc; padding: 6px;">
       <pre><code>finishQueue = []
-
-For pid in allPlayers:
-
+    For pid in allPlayers:
     has_event = coll.count_documents({
         "version": "Version [3.59] - 11/14/2025",
         "playerId": pid,
         "eventKey": "QuestFinishEvent:21"
     }) &gt; 0
-
     if has_event:
         finishQueue.append(pid)
     else:
@@ -112,23 +110,18 @@ For pid in allPlayers:
     </td>
     <td style="border: 1px solid #ccc; padding: 6px;">
       <pre><code>yellow_nodes = ["DialogueNodeEvent:68:23", "DialogueNodeEvent:68:27", "DialogueNodeEvent:68:28", "DialogueNodeEvent:68:31"]
-
 success_node = "DialogueNodeEvent:68:29"
-
 for pid in finishQueue:
-
     has_29 = coll.find_one({
         "version": "Version [3.59] - 11/14/2025",
         "playerId": pid, 
         "eventKey": success_node
     }) is not None
-
     has_any_yellow = coll.find_one({
         "version": "Version [3.59] - 11/14/2025",
         "playerId": pid, 
         "eventKey": {"$in": yellow_nodes}
     }) is not None
-
     if has_29 and not has_any_yellow:
         color = 1 #("green")
     else:
@@ -140,15 +133,12 @@ for pid in finishQueue:
     <td style="border: 1px solid #ccc; padding: 6px;">U2.C2</td>
     <td style="border: 1px solid #ccc; padding: 6px;">
       <pre><code>finishQueue = []
-
 For pid in allPlayers:
-
     has_event = coll.count_documents({
         "version": "Version [3.59] - 11/14/2025",
         "playerId": pid,
         "eventKey": "DialogueNodeEvent:20:26"
     }) &gt; 0
-
     if has_event:
         finishQueue.append(pid)
     else:
@@ -156,16 +146,13 @@ For pid in allPlayers:
     </td>
     <td style="border: 1px solid #ccc; padding: 6px;">
       <pre><code>START_KEY = "DialogueNodeEvent:20:1"
-END_KEY   = "DialogueNodeEvent:19:46"
-
+END_KEY = "DialogueNodeEvent:19:46"
 TARGET_KEYS = [
     "DialogueNodeEvent:18:99",  "DialogueNodeEvent:28:179", "DialogueNodeEvent:59:179",
     "DialogueNodeEvent:18:223", "DialogueNodeEvent:28:182", "DialogueNodeEvent:59:182",
     "DialogueNodeEvent:18:224", "DialogueNodeEvent:28:183", "DialogueNodeEvent:59:183"
 ]
-
 for pid in finishQueue:
-
     start_doc = coll.find_one(
         {
             "version": "Version [3.59] - 11/14/2025",
@@ -175,9 +162,7 @@ for pid in finishQueue:
         },
         sort=[("timestamp", 1)]
     )
-
     start_ts = datetime.fromisoformat(start_doc["timestamp"].replace("Z", "+00:00"))
-
     end_doc = coll.find_one(
         {
             "version": "Version [3.59] - 11/14/2025",
@@ -188,12 +173,9 @@ for pid in finishQueue:
         },
         sort=[("timestamp", 1)]
     )
-
     end_ts = datetime.fromisoformat(end_doc["timestamp"].replace("Z", "+00:00"))
-
     start_iso = start_ts.isoformat().replace("+00:00", "Z")
     end_iso   = end_ts.isoformat().replace("+00:00", "Z")
-
     count_targets = coll.count_documents({
         "version": "Version [3.59] - 11/14/2025",
         "playerId": pid,
