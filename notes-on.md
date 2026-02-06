@@ -28,7 +28,7 @@
 
 **Idea**:
 
-* Since the dashboard has a design goal of providing specific intervention advice for the instructors, we would like to propose using a GenAI / MCS Server to generate some of this advice. We'd like to create agent so the logging system can provide specific intervention text. We think we can use learning theories and MHS instructor guide information to provide advice to students and teachers that are users. We perform some prompt engineering and give output to the narrative suggestions on the dashboard.
+* Since the dashboard has a design goal of providing specific intervention advice for the instructors, we would like to propose using a GenAI / MCS Server to generate some of this advice. We'd like to create agent so the logging system, along with some other materials (e.g., education/learning theories, teacher guidance), can provide specific intervention text. We think we can use learning theories and MHS instructor guide information to provide advice to students and teachers that are users. We perform some prompt engineering and give output to the narrative suggestions on the dashboard.
 
   * We'd like to pilot/explore this starting soon
   * Then see what we can usefully what can be generated
